@@ -1,0 +1,140 @@
+Interviewer: Rana, imagine you have an array like [3, 7, 11, 2, 9]. How would you write JavaScript code to find the sum of all these numbers?
+
+function sumOfArray(numbers) {
+    let sum = 0;
+    for (const num of numbers) {
+        sum += num;
+    }
+  return sum;
+}
+
+Interviewer: Rana, imagine you're given a number, say num, and you need to determine whether it's even or odd. How would you write JavaScript code to do that?
+function oddOrEven(num) {
+    return num % 2 === 0 ? "Even" : "Odd";
+}
+
+Interviewer: Rana, imagine you have a string, for example, "hello", and you need to reverse it to "olleh" using JavaScript. How would you approach this problem?
+function reverseString(str) {
+    var reverse = "";
+    for (let i = str.length - 1; i >= 0; i--) {
+        reverse += str[i];
+    }
+    return reverse;
+}
+
+Interviewer: Rana, suppose you're given a string, such as "radar", and you need to determine whether it's a palindrome (reads the same forwards and backwards). How would you approach this problem using JavaScript?
+function isPalindrome(str) {
+    var palindrome = "";
+    for (let i = str.length - 1; i >= 0; i--) {
+        palindrome += str[i];
+    }
+    return palindrome.toLowerCase() === str.toLowerCase();
+}
+
+Interviewer: Rana, imagine you have an array with duplicate elements, like [1, 2, 3, 3, 4, 5, 5, 6], and you need to write JavaScript code to remove these duplicates and return a new array with unique elements. How would you approach this problem?
+function removeDuplicates(numbers) {
+    let arr = [];
+    for (const num of numbers) {
+        if (!arr.includes(num)) {
+            arr.push(num);
+        }
+    }
+    return arr;
+}
+Interviewer: Rana, suppose you have an array of numbers, such as [5, 10, 2, 8, 3], and you need to write JavaScript code to find the largest and smallest numbers in this array. How would you approach this problem?
+function findLargestAndSmallest(arr) {
+    let largestNum = arr[0];
+    let smallestNum = arr[0];
+    for (const num of arr) {
+        if (num > largestNum) {
+            largestNum = num;
+        }
+        if (num < smallestNum) {
+            smallestNum = num;
+        }
+    }
+    return [largestNum, smallestNum];
+}
+Interviewer: Rana, imagine you have an array of elements, such as ['apple', 'banana', 'orange', 'apple', 'banana', 'apple'], and you need to write JavaScript code to count the occurrences of each element in the array. How would you approach this problem?
+function countOccurrences(arr) {
+    const counts = {};
+    for (const element of arr) {
+        if (counts[element]) {
+            counts[element]++;
+        } else {
+            counts[element] = 1;
+        }
+    }
+    return counts;
+}
+Interviewer: Rana, suppose you have an array of numbers, such as [5, 2, 9, 1, 7], and you need to write JavaScript code to sort these numbers in ascending order. How would you approach this problem?
+let sorted = arr.sort((a, b) => a - b);
+
+Interviewer: Rana, suppose you're given a non-negative integer, such as 5, and you need to calculate its factorial (which is the product of all positive integers less than or equal to that number). How would you approach this problem using JavaScript?
+
+function fact(num) {
+    if (num === 0 || num === 1) {
+        return 1;
+    } else {
+        return num * fact(num - 1);
+    }
+}
+
+function factorial(num) {
+    let result = 1;
+    for (let i = 2; i <= num; i++) {
+        result *= i;
+    }
+    return result;
+}
+console.log(factorial(5)); // Output: 120
+
+Interviewer: Rana, suppose you're given two strings, such as "listen" and "silent", and you need to determine whether they are anagrams of each other (i.e., if they contain the same characters in the same quantities, but in a different order). How would you approach this problem using JavaScript?
+
+function anagramFun(str, str1) {
+    var newLetter = "";
+    for (var i = 0; i < str.length; i++) {
+        for (var j = 0; j < str1.length; j++) {
+            if (str[i] === str1[j]) {
+                newLetter += str1[j];
+                break;
+            }
+        }
+    }
+    return str === newLetter ? "It's an anagram" : "It's not an anagram";
+}
+Interviewer: Rana, imagine you're given a sentence, such as "Hello world, how are you?", and you need to reverse the order of the words in the sentence so that it becomes "you? are how world, Hello". How would you approach this problem using JavaScript?
+function reverseSen(str) {
+    let arr = str.split(" ");
+    let arr2 = [];
+    for (var i = arr.length - 1; i >= 0; i--) {
+        arr2.push(arr[i]);
+    }
+    return arr2.join(" ");
+}
+
+Interviewer: Rana, suppose you're given a string, such as "programming", and you need to find the first non-repeating character in the string (i.e., a character that appears only once in the string). How would you approach this problem using JavaScript?
+
+function findNonRepeating(str) {
+    const counts = {};
+    const arr = [];
+
+    // Count occurrences of each character in the string
+    for (let i = 0; i < str.length; i++) {
+        if (counts[str[i]]) {
+            counts[str[i]]++;
+        } else {
+            counts[str[i]] = 1;
+        }
+    }
+
+    // Find the first non-repeating character
+    for (const key in counts) {
+        if (counts[key] === 1) {
+            arr.push(key);
+            break; // Stop after finding the first non-repeating character
+        }
+    }
+
+    return arr;
+}
